@@ -1,0 +1,63 @@
+<script type="text/javascript">
+//<![CDATA[
+
+ document.getElementsByName("ISLL")[0].value = ISLL;
+ document.getElementsByName("ISINS")[0].value = ISINS;
+ document.getElementsByName("REPEATADVICE")[0].value = REPEATADVICE;
+ document.getElementsByName("ADVICEMODE")[0].value = writtenOrAudioAdvice;
+ document.getElementsByName("REPEATMODE")[0].value = writtenOrAudioReplay;
+ document.getElementsByName("ITEMID")[0].value = ITEMID;
+ document.getElementsByName("TRIMMED")[0].value = trimmedAudioRepetition;
+ 
+ userID = (Date.now()/Math.pow(10,13)).toString(36).substring(2,15) + Math.random().toString(36).substring(2,15);
+ document.getElementsByName("AMTID")[0].value = userID;
+  
+ document.getElementsByName("Duration")[0].value = Date.now()-startTime;
+   
+//]]>
+</script>
+
+<div style="width: 40em;">
+<p>
+  Please give us these last pieces of information before we save your answers.
+</p>
+    
+<table style="text-align: left;">
+<tr>
+  <td>Is English<br /> your native language?</td>
+  <td>
+    <input name="english" type="radio" value="yes" id="yenglish" class="obligatory" /><label for="yenglish">Yes </label>
+    <input name="english" type="radio" value="no" id="nenglish"/><label for="nenglish"> No</label>
+  </td>
+</tr>
+<tr>
+<td colspan="2"><label class="error" for="english"></label></td>
+</tr>
+<tr>
+  <td>What audio device<br /> did you use?</td>
+  <td>
+    <input name="audio" type="radio" value="speakers" id="aspeakers" class="obligatory" /><label for="aspeakers">Speakers </label><br />
+    <input name="audio" type="radio" value="headphones" id="aheadphones"/><label for="aheadphones">Headphones</label><br />
+    <input name="audio" type="radio" value="other" id="aother"/><label for="aother">Other: </label><input type="text" name="otherdevice" value=""/>
+  </td>
+</tr>
+<tr>
+  <td colspan="2">If you have some feedback, please use the following field:</td>
+</tr>
+<tr>
+  <td colspan="2">
+    <textarea name="write_something" rows="5" cols="40"></textarea>
+    <input type="text" name="AMTID" value="test" style="display: none;" />
+    <input type="text" name="ISLL" value="test" style="display: none;" />
+    <input type="text" name="ISINS" value="test" style="display: none;" />
+    <input type="text" name="REPEATADVICE" value="test" style="display: none;" />
+    <input type="text" name="ADVICEMODE" value="test" style="display: none;" />
+    <input type="text" name="REPEATMODE" value="test" style="display: none;" />
+    <input type="text" name="ITEMID" value="test" style="display: none;" />
+    <input type="text" name="Duration" value="test" style="display: none;" />
+    <input type="text" name="TRIMMED" value="test" style="display: none;" />
+  </td>
+</tr>
+</table>
+
+</div>

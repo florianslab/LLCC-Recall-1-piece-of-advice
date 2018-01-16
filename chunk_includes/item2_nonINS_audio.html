@@ -1,0 +1,34 @@
+<script type="text/javascript">
+//<![CDATA[
+
+var keypress;
+  
+setTimeout(function() {
+    //$(".Message-continue-link").css("display","none");
+    keypress = $(document).data('events').keydown[0].handler;
+    $(document).unbind("keydown");
+  },
+  1);
+  
+  
+function showContinue()
+{
+    // $(".Message-continue-link").css("display","block");
+    $("#continueMessage").css("display","block");
+    $(document).bind("keydown", function(){
+      $(document).unbind("keydown");
+      keypress()
+    });
+}
+
+//]]>
+</script>
+
+<div style="text-align: center; margin:auto;">
+  <img src="http://files.lab.florianschwarz.net/ibexfiles/LucyCate/mic.png" style="height: 200px; text-align: center;" />
+  <audio controls autoplay preload="auto" style="display: none;" onended="showContinue()">
+    <source src="http://files.lab.florianschwarz.net/ibexfiles/LucyCate/item2nonINSboring_spliced.mp3" type="audio/mp3" />
+    We are sorry but your system does not support the audio.
+  </audio>
+    <p id="continueMessage" style="display:none;">Press F or J to continue...</p>
+</div>
